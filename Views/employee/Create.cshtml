@@ -1,4 +1,4 @@
-﻿@model Shaurya_Round.Models.Employee
+﻿@model Shaurya_Round.Models.employeee
 
 @{
     ViewData["Title"] = "Create";
@@ -6,17 +6,12 @@
 
 <h1>Create</h1>
 
-<h4>Employee</h4>
+<h4>employeee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="e_id" class="control-label"></label>
-                <input asp-for="e_id" class="form-control" />
-                <span asp-validation-for="e_id" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Fname" class="control-label"></label>
                 <input asp-for="Fname" class="form-control" />
@@ -53,14 +48,14 @@
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Pincode" class="control-label"></label>
-                <input asp-for="Pincode" class="form-control" />
-                <span asp-validation-for="Pincode" class="text-danger"></span>
+                <label asp-for="Pcode" class="control-label"></label>
+                <input asp-for="Pcode" class="form-control" />
+                <span asp-validation-for="Pcode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MobileNo" class="control-label"></label>
-                <input asp-for="MobileNo" class="form-control" />
-                <span asp-validation-for="MobileNo" class="text-danger"></span>
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

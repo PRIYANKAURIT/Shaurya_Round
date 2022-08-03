@@ -2,50 +2,50 @@
 using Microsoft.AspNetCore.Mvc;
 using Shaurya_Round.Data;
 using Shaurya_Round.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Shaurya_Round.Controllers
+namespace ShauryaTest.Controllers
 {
-    public class EmployeeController1 : Controller
+    public class employeeController : Controller
     {
-        EmployeeDAL db = new EmployeeDAL();
-        // GET: EmployeeController1
-        public IActionResult Index()
+        employeeDAL db = new employeeDAL();
+        // GET: employeeController
+        public ActionResult Index()
         {
-            var model = db.GetAllEmployee();
+            var model = db.Getemployee();
             return View(model);
         }
-        
-       
-        // GET: EmployeeController1/Details/5
+
+        // GET: employeeController/Details/5
         public ActionResult Details(int id)
         {
-            var model = db.GetEmployeeById(id);
+            var model = db.GetemployeebyId(id);
             return View(model);
         }
 
-        // GET: EmployeeController/Create
+        // GET: employeeController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: EmployeeController/Create
+        // POST: employeeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Employee employee)
+        public ActionResult Create(employeee empl)
         {
             try
             {
-                int result = db.AddEmployee(employee);
+                int result = db.Addemployee(empl);
                 if (result == 1)
                 {
                     return RedirectToAction(nameof(Index));
                 }
                 else
-                {
                     return View();
-                }
-
             }
             catch
             {
@@ -53,30 +53,27 @@ namespace Shaurya_Round.Controllers
             }
         }
 
-        // GET: EmployeeController/Edit/5
+        // GET: employeeController/Edit/5
         public ActionResult Edit(int id)
         {
-            var model = db.GetEmployeeById(id);
+            var model = db.GetemployeebyId(id);
             return View(model);
         }
 
-        // POST: EmployeeController/Edit/5
+        // POST: employeeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Employee employee)
+        public ActionResult Edit(employeee empl)
         {
             try
             {
-                int result = db.UpdateEmployee(employee);
+                int result = db.Updateemployee(empl);
                 if (result == 1)
                 {
                     return RedirectToAction(nameof(Index));
                 }
                 else
-                {
                     return View();
-                }
-
             }
             catch
             {
@@ -84,30 +81,28 @@ namespace Shaurya_Round.Controllers
             }
         }
 
-        // GET: EmployeeController/Delete/5
+        // GET: employeeController/Delete/5
         public ActionResult Delete(int id)
         {
-            var model = db.GetEmployeeById(id);
+            var model = db.GetemployeebyId(id);
             return View(model);
         }
 
-        // POST: EmployeeController/Delete/5
+        // POST: employeeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
-        public ActionResult DeleteEmployee(int id)
+        public ActionResult DeleteConfirm(int id)
         {
             try
             {
-                int result = db.DeleteEmployee(id);
+                int result = db.Deleteemployee(id);
                 if (result == 1)
                 {
                     return RedirectToAction(nameof(Index));
                 }
                 else
-                {
                     return View();
-                }
             }
             catch
             {

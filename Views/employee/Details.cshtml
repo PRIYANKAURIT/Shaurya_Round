@@ -1,4 +1,4 @@
-﻿@model Shaurya_Round.Models.Employee
+﻿@model Shaurya_Round.Models.employeee
 
 @{
     ViewData["Title"] = "Details";
@@ -7,15 +7,9 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Employee</h4>
+    <h4>employeee</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.e_id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.e_id)
-        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Fname)
         </dt>
@@ -59,16 +53,16 @@
             @Html.DisplayFor(model => model.City)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pincode)
+            @Html.DisplayNameFor(model => model.Pcode)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pincode)
+            @Html.DisplayFor(model => model.Pcode)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MobileNo)
+            @Html.DisplayNameFor(model => model.Mobile)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MobileNo)
+            @Html.DisplayFor(model => model.Mobile)
         </dd>
     </dl>
 </div>
